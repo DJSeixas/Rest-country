@@ -1,7 +1,7 @@
 <template>
     <ul class="table">
         <li class="table__item">
-            <Card v-for="country,index in countries" :key="index"
+            <Card v-for="country,index in filterList" :key="index"
             :country="country"
             @select="select"
             :selectedCountry="country"
@@ -13,7 +13,7 @@
 <script>
 import Card from './Card.vue';
 
-import { mapState, mapActions } from 'vuex';
+import { mapState, mapActions, mapGetters } from 'vuex';
 
 export default {
     name: 'TheTable',
@@ -26,8 +26,10 @@ export default {
 },
     computed: {
     ...mapState([
-        'countries',
         'selectedCountry'
+    ]),
+    ...mapGetters([
+        'filterList'
     ])
 },
 created(){

@@ -6,7 +6,7 @@
     </div>
     <div class="details">
       <div class="details__imagem">
-        <img :src=" selectedCountry.flags.png " width="600" height="400" alt="flag">
+        <img :src=" selectedCountry.flags.png " width="580" height="400" alt="flag">
       </div>
       <div class="details__info">
         <h1>{{ selectedCountry.name }}</h1>

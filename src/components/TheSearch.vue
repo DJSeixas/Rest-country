@@ -6,7 +6,12 @@
                             <use xlink:href="@/assets/images/sprite.svg#icon-search"></use>
                         </svg>
                     </button>
-                    <input type="text" class="search__input" placeholder="Search for a country...">
+                    <input type="text" 
+                           class="search__input" 
+                           placeholder="Search for a country..."
+                           v-model="input"
+                           @input="search()"
+                           >
                 </form>
 
                 <div class="select">
@@ -34,12 +39,17 @@ export default {
     name: 'TheSearch',
     data(){
         return{
-            selected: false
+            selected: false,
+            input: ''
         }
     },
     methods:{
         toggle(){
             this.selected = !this.selected
+        },
+        search(){
+            this.$store.dispatch('updateList', this.input)
+            this.$store.commit('setSearchList', this.input)
         }
     }
 }

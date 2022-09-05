@@ -2,7 +2,7 @@
 <router-link  to="/Details" class="nav">
   <div @click="$emit('select', country)"  class="card">
         <div class="card__imagem">
-            <img :src=" country.flags.png " width="300" height="200" alt="flag">
+            <img :src=" country.flags.png " width="300" height="180" alt="flag">
         </div>
         <div class="card__content">
             <h3 class="card__content-title">{{ country.name }}</h3>

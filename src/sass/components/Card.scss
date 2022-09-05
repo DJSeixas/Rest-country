@@ -12,7 +12,7 @@
     box-shadow: $box-shadow;
 
     &__imagem{
-        flex: 1 1 50%;
+        flex: 1 1 40%;
     }
 
     &__content{
@@ -21,11 +21,11 @@
         padding: 1.5rem;
 
         &-title{
-            padding-bottom: 1rem;
+            padding-bottom: 1.5rem;
         }
 
         &-details{
-            padding-bottom: .4rem;
+            padding-bottom: .5rem;
             font-size: .9rem;
         }
     }
