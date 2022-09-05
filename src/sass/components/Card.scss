@@ -1,0 +1,38 @@
+.card{
+    background-color: $color-white;
+    width: 17rem;
+    height: 21rem;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 15%;
+    overflow: hidden;
+    margin: 3rem;
+
+    border-radius: $b-radius;
+    box-shadow: $box-shadow;
+
+    &__imagem{
+        background-color: orangered;
+        flex: 0 0 50%;
+    }
+
+    &__content{
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem;
+
+        &-title{
+            padding-bottom: 1rem;
+        }
+
+        &-details{
+            padding-bottom: .4rem;
+            font-size: .9rem;
+        }
+    }
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
