@@ -35,9 +35,10 @@
     margin-top: -14rem;
 
     &__imagem{
-        background-color: orangered;
         height: 50%;
         flex:0 0 45%;
+        border-radius: $b-radius;
+        overflow: hidden;
     }
 
     &__info{
@@ -60,6 +61,17 @@
             &-item{
                 flex: 0 0 50%;
                 margin-bottom: .7rem;
+
+                &--language{
+                    display:inline-block;
+
+                    &:not(:last-child){
+                        &::after{
+                            content: ",";
+                            margin: 0 .2rem 0 .1rem;
+                        }
+                    }
+                }
             }
         }
 
@@ -68,11 +80,13 @@
                 flex-direction: row;
                 align-items: center;
                 justify-content: space-between;
+                
 
             &-lista{
                 display: flex;
                 flex-direction: row;
                 align-items: center;
+                flex-wrap: wrap;
                 
                 text-decoration: none;
                 color: inherit;
