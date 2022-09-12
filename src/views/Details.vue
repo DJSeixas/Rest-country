@@ -49,6 +49,7 @@ export default {
             return this.selectedCountry.population.toLocaleString('pt-br')
         }
 }
+
 }
 </script>
 

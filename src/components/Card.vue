@@ -1,6 +1,6 @@
 <template>
 <router-link  to="/Details" class="nav">
-  <div @click="$emit('select', country)"  class="card">
+  <div @click="$emit('select', country)"  class="card" :class="{dark: darkMode}">
         <div class="card__imagem">
             <img :src=" country.flags.png " width="300" height="180" alt="flag">
         </div>
@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
     name:'Card',
     props:{
@@ -32,6 +33,9 @@ export default {
         }
     },
     computed: {
+        ...mapState([
+            'darkMode'
+        ]),
         formatPop(){
             return this.country.population.toLocaleString('pt-br')
         }

@@ -9,22 +9,47 @@
 *::after,
 *::before{
     box-sizing: inherit;
+    margin: 0;
+    padding: 0;
 }
 
 html{
-    box-sizing: border-box;
     font-size: 62.5%;
+
+    @include respond(tab-land){
+        font-size: 56.25%;
+    }
+
+    @include respond(tab-port){
+        font-size: 50%;
+    }
+
+    @include respond(big-desktop){
+        font-size: 75%;
+    }
 
 }
 
 body{
     font-family: 'Nunito Sans', sans-serif;
     line-height: 1.6;
+    box-sizing: border-box;
 
     background-color: $bg-color-light;
+
 }
 
 #app{
-    height: 100vh;
+    height: 1000vh;
     background-color: $bg-color-light;
+
+    .dark{
+        background-color: $color-input-dark !important;
+        color: $color2 !important;
+    }
+
+    .darkBg{
+        background-color: $bg-color-dark!important;
+        color: $color2 !important;
+    }
 }

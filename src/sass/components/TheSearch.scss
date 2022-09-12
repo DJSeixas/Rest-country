@@ -4,6 +4,20 @@
     justify-content: space-between;
     padding: 4rem 11rem;
 
+    @include respond(tab-land){
+        padding: 4rem 8rem;
+    }
+
+    @include respond(tab-port){
+        padding: 4rem 5rem;
+    }
+
+    @include respond(phone){
+        flex-direction: column; 
+        align-items:flex-start;
+        justify-content:space-between; 
+        padding: 3rem 4rem;
+    }
 
     &__form{
         display: flex;
@@ -13,6 +27,20 @@
         box-shadow: -1px 0px 15px 1px rgba(0,0,0,.1);
        
         border-radius: $b-radius;
+
+        @include respond(tab-land){
+            flex: 0 0 26%;
+        }
+    
+        @include respond(tab-port){
+            width: 20%;
+            margin-left: 4rem;
+        }
+
+        @include respond(phone){
+            width: 10%;
+            margin-left: 8rem;
+        }
     }
 
     &__input{
@@ -22,7 +50,7 @@
         flex: 1;
         background-color: $color-white;
         border: none;
-        padding: 1.3rem 5rem;
+        padding: 1.3rem 4rem;
         border-radius: $b-radius;
         
           
@@ -61,6 +89,19 @@
             box-shadow: $box-shadow;
             cursor: pointer;
 
+
+            @include respond(tab-port){
+                width: 6rem;
+                padding: 1.1rem 1rem;
+            }
+
+            @include respond(phone){
+                width: 150%;
+                padding: 1.1rem 1rem;
+                margin-left: -1rem;
+                margin-top: 2rem;
+            }
+
         }
 
         &__text{
@@ -83,6 +124,18 @@
             background-color: $color-white;
             opacity: 0;
             transition: all .2s;
+            overflow: hidden;
+
+            @include respond(tab-port){
+                padding: .6rem;
+            }
+
+            @include respond(phone){
+                padding: .6rem;
+                margin-left: -1rem;
+                width: 160%;
+            }
+
         }
 
         &__item{
@@ -94,6 +147,7 @@
 
             &:hover{
                 background-color: $bg-color-light;
+                border-radius: $b-radius;
             }
 
         }

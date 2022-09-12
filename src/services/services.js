@@ -10,5 +10,8 @@ const apiCLient = axios.create({
 export default{
     getCountries(){
         return apiCLient.get('/all')
+    },
+    filterRegion(region){
+        return apiCLient.get(`/region/${region}`)
     }
 }

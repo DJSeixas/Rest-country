@@ -1,5 +1,5 @@
 <template>
-    <ul class="table">
+    <ul class="table" :class="{darkBg: darkMode}">
         <li class="table__item">
             <Card v-for="country,index in filterList" :key="index"
             :country="country"
@@ -26,7 +26,8 @@ export default {
 },
     computed: {
     ...mapState([
-        'selectedCountry'
+        'selectedCountry',
+        'darkMode'
     ]),
     ...mapGetters([
         'filterList'

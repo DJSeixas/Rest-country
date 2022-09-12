@@ -10,7 +10,8 @@ export default new Vuex.Store({
     selectedCountry: undefined,
     filterList: [],
     searchList: '',
-    filterBy: ''  
+    region: 'Filter By Region',
+    darkMode: false 
   },
 
   getters: {
@@ -37,6 +38,15 @@ export default new Vuex.Store({
     },
     setSearchList: (state, payload) => {
       state.searchList = payload
+    },
+    setRegion: (state, payload) => {
+      state.region = payload
+    },
+    getRegion: (state, { filterList }) => {
+      state.filterList =  filterList
+    },
+    dark(state, payload){
+      state.darkMode = payload
     }
   },
 
@@ -54,9 +64,11 @@ export default new Vuex.Store({
       })
       commit("setList", cs)
      },
-     /* filterBy: ({commit}, { value, region }){
-
-     } */
+     filterBy: async ({commit, state}) => {
+      const response = await services.filterRegion(state.region.toLocaleLowerCase())
+      commit('getRegion', { filterList: response.data })
+      console.log(response.data)
+     }
   },
 
   modules: {
