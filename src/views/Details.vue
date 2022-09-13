@@ -23,7 +23,7 @@
         </ul>
         <div class="details__info-border"><strong>Border Countries:</strong>
           <ul class="details__info-border-lista">
-          <li class="details__info-border-lista-item" v-for="border,index in selectedCountry.borders" :key="index">{{ border }}</li>
+          <li class="details__info-border-lista-item" :class="{dark: darkMode}" v-for="border,index in selectedCountry.borders" :key="index">{{ border }}</li>
           </ul>
         </div>
       </div>

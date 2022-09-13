@@ -33,5 +33,6 @@ export default {
       },
       [SET_BACK]: (state) => {
         state.filterList = state.countries
+        state.region = 'Filter By Region'
       }
 }
