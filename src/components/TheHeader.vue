@@ -5,10 +5,10 @@
 
     <div class="header__text" :class="{dark: darkMode}">
       <button class="header__button" @click="dark()" :class="{dark: darkMode}">
-        <svg class="header__icon" :class="{dark: darkMode}" v-if="darkMode">
+        <svg class="header__icon" :class="{darkIcon: darkMode}" v-if="darkMode">
            <use xlink:href="@/assets/images/sprite.svg#icon-light-up"></use>
          </svg>
-        <svg class="header__icon" :class="{dark: darkMode}" v-else>
+        <svg class="header__icon" :class="{darkIcon: darkMode}" v-else>
            <use xlink:href="@/assets/images/sprite.svg#icon-moon"></use>
          </svg>
       </button>
@@ -34,7 +34,7 @@ export default {
   },  
   methods: {
     dark(){
-      this.$store.commit('dark', !this.darkMode)
+      this.$store.commit('DARK', !this.darkMode)
     }
   }
 }

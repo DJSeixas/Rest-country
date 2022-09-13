@@ -40,7 +40,6 @@ body{
 }
 
 #app{
-    height: 1000vh;
     background-color: $bg-color-light;
 
     .dark{
@@ -51,5 +50,13 @@ body{
     .darkBg{
         background-color: $bg-color-dark!important;
         color: $color2 !important;
+    }
+
+    .darkIcon{
+        fill: aliceblue;
+    }
+
+    .darkHover:hover{
+        background-color: $bg-color-dark!important;
     }
 }

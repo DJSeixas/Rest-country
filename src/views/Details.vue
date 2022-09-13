@@ -1,12 +1,13 @@
 <template>
   <div>
     <TheHeader />
+    <div class="page" :class="{darkBg: darkMode}">  
     <div class="content">
-      <router-link class="content__link" to="/">&larr;<span  class="content__span">Back</span></router-link>
+      <router-link class="content__link" to="/" :class="{dark: darkMode}">&larr;<span  class="content__span">Back</span></router-link>
     </div>
     <div class="details">
       <div class="details__imagem">
-        <img :src=" selectedCountry.flags.png " width="580" height="400" alt="flag">
+        <img :src=" selectedCountry.flags.png " alt="flag">
       </div>
       <div class="details__info">
         <h1>{{ selectedCountry.name }}</h1>
@@ -28,6 +29,7 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -43,13 +45,16 @@ export default {
 },
   computed: { 
     ...mapState([
-      'selectedCountry'
+      'selectedCountry',
+      'darkMode'
     ]),
         formatPop(){
             return this.selectedCountry.population.toLocaleString('pt-br')
         }
+},
+mounted(){
+  window.scrollTo(0, 0)
 }
-
 }
 </script>
 

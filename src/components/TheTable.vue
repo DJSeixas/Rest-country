@@ -43,6 +43,7 @@ created(){
         ]),
         select(country){
             this.selectCountry({ country })
+            this.$store.commit('SET_BACK')
         }
     },
 }

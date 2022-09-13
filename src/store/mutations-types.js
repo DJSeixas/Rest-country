@@ -1,0 +1,8 @@
+export const GET_COUNTRIES = 'GET_COUNTRIES'
+export const SELECT_COUNTRY = 'SELECT_COUNTRY'
+export const SET_LIST = 'SET_LIST'
+export const SEARCH_LIST = 'SEARCH_LIST'
+export const SET_REGION = 'SET_REGION'
+export const GET_REGION = 'GET_REGION'
+export const DARK = 'DARK'
+export const SET_BACK = 'SET_BACK'

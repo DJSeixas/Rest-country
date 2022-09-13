@@ -3,7 +3,7 @@
                 <form action="#" class="search__form">
                     <button class="search__button" :class="{dark: darkMode}">
                         <svg class="search__icon">
-                            <use xlink:href="@/assets/images/sprite.svg#icon-search"></use>
+                            <use xlink:href="@/assets/images/sprite.svg#icon-search" :class="{darkIcon: darkMode}"></use>
                         </svg>
                     </button>
                     <input type="text" 
@@ -25,7 +25,8 @@
                     <ul class="select__options" 
                         :class="{active: selected, dark: darkMode}" >
                         <li 
-                        class="select__item" 
+                        :class="{darkHover: darkMode}" 
+                        class="select__item"
                         v-for="reg, id in options"
                         :key="id"
                         @click="setText(reg.region)">{{ reg.region }}                        
@@ -69,19 +70,17 @@ export default {
         ]),
         toggle(){
             this.selected = !this.selected 
-            console.log(this.region, this.countries)
-            return this.$store.commit('setRegion', 'Filter By Region')
+            this.$store.commit('SET_REGION', 'Filter By Region')
+            this.$store.commit('SET_BACK')
         },
         search(){
             this.$store.dispatch('updateList', this.input)
-            this.$store.commit('setSearchList', this.input)
+            this.$store.commit('SEARCH_LIST', this.input)
         },
         setText(value){
-            this.text = value
             this.selected = !this.selected
-            this.$store.commit('setRegion', value)
+            this.$store.commit('SET_REGION', value)
             this.filterBy()
-            return console.log(this.text)
         }
     }
 }
